@@ -1,0 +1,13 @@
+h1 {color: blue;}
+#h21,#h23,#h25 {
+    color: red;
+}
+#h22,#h24,#h26 {
+    color: green;
+}
+#pr1,#pr3,#pr5 {
+    color: gray;
+}
+#pr2,#pr4,#pr6 {
+    color: orange;
+}
