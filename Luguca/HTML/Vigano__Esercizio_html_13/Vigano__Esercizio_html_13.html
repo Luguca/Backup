@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <title>form</title>
+      </head>
+    <body>
+      <h1>Form Generale</h1>
+
+      <form>
+        <fieldset>
+        <legend>Dati Personali</legend>
+        <label for="idsurname">Nome:</label>
+        <input type="text" id="idsurname" name="Surname">
+      
+        <label for="idname">Cognome:</label>
+        <input type="text" id="idname" name="Name">
+      
+        <label for="cars">Genere:</label>
+        <select name="gender" id="cars">
+            <option value="maschio">Maschio</option>
+            <option value="femmina">Femmina</option>
+        </select><br><br>
+      
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="pwd">Password:</label>
+        <input type="password" id="pwd" name="pwd">
+    
+        <h3>Data di nascità</h3><br>
+        <input type="date" id="iddata" name="nascita"><br><br>
+        
+        <label for="cars">Nazionalità: </label>
+        <input list="nations" name="nazioni" id="nazioni">
+        <datalist id="nations">
+        <option value="Albanese">
+        <option value="Rumeno">
+        <option value="Russo">
+        <option value="Inglese">
+        <option value="Italiana">
+        <option value="Tedesco">
+        <option value="Giapponese">
+        <option value="Cinese">
+        </datalist><br>
+
+        <label for="cars">Attività lavorativa: </label>
+        <input list="work" name="lavoro" id="lavoro">
+        <datalist id="work">
+        <option value="Muratore">
+        <option value="Influencer">
+        <option value="Idraulico">
+        <option value="Attivistà">
+        <option value="Insegnate">
+        <option value="Poliziotto">
+        <option value="Scolaro">
+        <option value="Nullafacente">
+        </datalist><br>
+
+
+        <label for="cars">Hobby: </label>
+        <input list="hobby" name="passione" id="passione">
+        <datalist id="hobby">
+        <option value="Video Giochi">
+        <option value="Ascoltare musica">
+        <option value="Dormire">
+        <option value="Mangiare">
+        <option value="Disegnare">
+        <option value="Pattinaggio">
+        <option value="Gli ski">
+        <option value="Rilassarsi">
+  </datalist><br>
+    
+  <h3>Altezza</h3>
+  <input type="number" id="altezza" name="altezza" min="150" max="200"><br>
+  
+  
+  
+  
+  <label for="Peso">Peso: </label>
+  <input type="range" min="60" max="120" value="90" class="slider" id="Peso">
+  <input type="submit" value="Invia">  
+  </fieldset>      
+  </form>
+  </body>
