@@ -110,11 +110,186 @@ void COGNOME()
 
 void NOME()
 {
+    int con = 0;
+    int o;
     char nome[20];
     printf("inserire nome: ");
     scanf("%s", nome);
     //toupper(nome);
     int lenn=strlen(nome);
+    for (int i = 0; i < lenn; i++)
+    {
+        switch (nome[i])
+        {
+        case 'a':
+            break;
+        case 'e':
+            break;
+        case 'i':
+            break;
+        case 'o':
+            break;
+        case 'u':
+            break;
+        default:
+        con = con + 1;
+        break;
+        }
+    }
+    switch (con)
+    {
+    case 4:
+        for (int i = 0; i < lenn; i++)
+    {
+        switch (nome[i])
+        {
+        case 'a':
+            break;
+        case 'e':
+            break;
+        case 'i':
+            break;
+        case 'o':
+            break;
+        case 'u':
+            break;
+        default:
+        if ((c != 6)&&(c != 5))
+        {
+            codice[c] = nome[i];
+            c = c + 1;
+        }
+        else
+        {
+            o = i+1;
+            while ((c != 6)||(o = lenn))
+            {
+                switch (nome[i])
+                {
+                case 'a':
+                    break;
+                case 'e':
+                    break;
+                case 'i':
+                    break;
+                case 'o':
+                    break;
+                case 'u':
+                    break;
+                default:
+                if ((c != 6))
+                {
+                    codice[c]=nome[o];
+                    c = c + 1;
+                }
+                break;
+                }
+            }    
+        }
+        break;
+        }
+    }
+        break;
+    case 3:
+        for (int i = 0; i < lenn; i++)
+    {
+        switch (nome[i])
+        {
+        case 'a':
+            break;
+        case 'e':
+            break;
+        case 'i':
+            break;
+        case 'o':
+            break;
+        case 'u':
+            break;
+        default:
+        if (c != 6)
+        {
+            codice[c] = nome[i];
+            c = c + 1;
+        }
+        break;
+        }
+    }
+        break;
+    case 2:
+        for (int i = 0; i < lenn; i++)
+    {
+        switch (nome[i])
+        {
+        case 'a':
+            break;
+        case 'e':
+            break;
+        case 'i':
+            break;
+        case 'o':
+            break;
+        case 'u':
+            break;
+        default:
+        if (c != 6)
+        {
+            codice[c] = nome[i];
+            c = c + 1;
+        }
+        break;
+        }
+    }
+    if (c<6)
+    {
+        for (int i = 0; i < lenn; i++)
+        {
+            switch (nome[i])
+            {
+            case 'a':
+                if (c != 6)
+                {
+                    codice[c] = nome[i];
+                    c = c + 1;
+                }
+                break;
+            case 'e':
+                if (c != 6)
+                {
+                    codice[c] = nome[i];
+                    c = c + 1;
+                }
+                break;
+            case 'i':
+                if (c != 6)
+                {
+                    codice[c] = nome[i];
+                    c = c + 1;
+                }
+                break;
+            case 'o':
+                if (c != 6)
+                {
+                    codice[c] = nome[i];
+                    c = c + 1;
+                }
+                break;
+            case 'u':
+                if (c != 6)
+                {
+                    codice[c] = nome[i];
+                    c = c + 1;
+                }
+                break;
+            default:
+                break;
+            }
+        }
+    }
+        break;
+    
+    default:
+        break;
+    }
     for (int i = 0; i < lenn; i++)
     {
         switch (nome[i])
@@ -260,23 +435,29 @@ void DATA()
     }
     }
     printf("%s\n", codice);
-    char giorno[2];
-    printf("inserire giorno: ");
-    scanf("%s", giorno);
-    if(giorno[2]=='\n')
+    char gender;
+    int check = 0;
+    do
     {
-        codice[c]=0;
-        c = c + 1;
-        codice[c]=giorno[1];
-        c = c + 1;
-    }
-    else
-    {
-        for (int i = 0; i < 2; i++)
+        printf("inserire m se maschio e f se femmina: ");
+        scanf("%c", &gender);
+        if ((gender == 'm')||(gender == 'f'))
         {
-            codice[c]=giorno[i];
-            c = c + 1;
+            check = check + 1;
         }
+        
+    } while (check != 1);
+    char giorno[2];
+    printf("inserire giorno (in caso di giorno singolo aggiungerci 0 prima): ");
+    scanf("%s", giorno);
+    if (gender == 'f')
+    {
+        giorno[0] = giorno[0] + 4;
+    }
+    for (int i = 0; i < 2; i++)
+    {
+        codice[c]=giorno[i];
+        c = c + 1;
     }
     printf("%s\n", codice);
 }
