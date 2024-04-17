@@ -133,6 +133,7 @@ void NOME()
             break;
         default:
         con = con + 1;
+        printf("%d\n", con);
         break;
         }
     }
@@ -164,6 +165,8 @@ void NOME()
             o = i+1;
             while (c != 6)
             {
+                printf("c:%d\n", c);
+                printf("o:%d\n", o);
                 switch (nome[o])
                 {
                 case 'a':
@@ -182,9 +185,9 @@ void NOME()
                     codice[c]=nome[o];
                     c = c + 1;
                 }
-                o = o + 1;
                 break;
                 }
+                o = o + 1;
             }    
         }
         break;
