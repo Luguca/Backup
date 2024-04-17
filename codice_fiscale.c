@@ -141,7 +141,6 @@ void NOME()
     case 4:
         for (int i = 0; i < lenn; i++)
     {
-        printf("%d\n", i);
         switch (nome[i])
         {
         case 'a':
