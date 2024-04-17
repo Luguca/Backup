@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-//#define CODICI_FISCALI ".\\documenti\\codici_fiscali.txt"
-//#define DATE ".\\documenti\\data.txt"
-//#define LUOGHI "luoghi.txt"
+#define LUOGHI ".\\codice_catastale_italia.txt"
 char codice[16];
 int c = 0;
 void NOME();
@@ -15,14 +13,6 @@ void CONTROLLO();
 
 int main()
 {
-    /*FILE *fcheck;
-    fcheck=fopen(CODICI_FISCALI, "r");
-    if(fcheck==NULL)
-    {
-        fclose(fcheck);
-        fcheck=fopen(CODICI_FISCALI,"w");
-    }
-    fclose(fcheck);*/
     COGNOME();
     NOME();
     DATA();
@@ -133,7 +123,6 @@ void NOME()
             break;
         default:
         con = con + 1;
-        printf("%d\n", con);
         break;
         }
     }
@@ -142,6 +131,7 @@ void NOME()
     case 4:
         for (int i = 0; i < lenn; i++)
     {
+        printf("%d\n", i);
         switch (nome[i])
         {
         case 'a':
@@ -165,8 +155,6 @@ void NOME()
             o = i+1;
             while (c != 6)
             {
-                printf("c:%d\n", c);
-                printf("o:%d\n", o);
                 switch (nome[o])
                 {
                 case 'a':
@@ -185,9 +173,9 @@ void NOME()
                     codice[c]=nome[o];
                     c = c + 1;
                 }
+                o = o + 1;
                 break;
                 }
-                o = o + 1;
             }    
         }
         break;
@@ -464,4 +452,18 @@ void DATA()
         c = c + 1;
     }
     printf("%s\n", codice);
+    return;
+}
+
+void LUOGO()
+{
+    FILE *fcheck;
+    fcheck=fopen(LUOGHI, "r");
+    char cont[100][16];
+    
+}
+
+void CONTROLLO()
+{
+
 }
