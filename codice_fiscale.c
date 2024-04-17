@@ -141,6 +141,7 @@ void NOME()
     case 4:
         for (int i = 0; i < lenn; i++)
     {
+        printf("%d\n", i);
         switch (nome[i])
         {
         case 'a':
@@ -156,15 +157,19 @@ void NOME()
         default:
         if ((c != 6)&&(c != 5))
         {
+            printf("prima: %d\n", c);
             codice[c] = nome[i];
             c = c + 1;
+            printf("dopo: %d\n", c);
         }
         else
         {
+            printf("c:%d\n", c);
             o = i+1;
-            while ((c != 6)||(o = lenn))
+            while (c != 6)
             {
-                switch (nome[i])
+                printf("o:%d\n", o);
+                switch (nome[o])
                 {
                 case 'a':
                     break;
@@ -177,11 +182,12 @@ void NOME()
                 case 'u':
                     break;
                 default:
-                if ((c != 6))
+                if (c != 6)
                 {
                     codice[c]=nome[o];
                     c = c + 1;
                 }
+                o = o + 1;
                 break;
                 }
             }    
