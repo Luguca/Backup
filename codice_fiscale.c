@@ -157,18 +157,14 @@ void NOME()
         default:
         if ((c != 6)&&(c != 5))
         {
-            printf("prima: %d\n", c);
             codice[c] = nome[i];
             c = c + 1;
-            printf("dopo: %d\n", c);
         }
         else
         {
-            printf("c:%d\n", c);
             o = i+1;
             while (c != 6)
             {
-                printf("o:%d\n", o);
                 switch (nome[o])
                 {
                 case 'a':
