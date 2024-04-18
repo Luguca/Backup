@@ -459,8 +459,23 @@ void LUOGO()
 {
     FILE *fcheck;
     fcheck=fopen(LUOGHI, "r");
-    char cont[100][16];
-    
+    char cont[100];
+    char stato[100];
+    char cod_stato[4];
+    printf("inserire dove sei nato");
+    scanf("%s", stato);
+    int x = strlen(stato);
+    while(fscanf(fcheck, "%s %s", cont, cod_stato))
+    {
+        if(strcmp(cont, stato)==0)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                codice[c]=cod_stato[i];
+                c = c + 1;
+            }
+        }
+    }
 }
 
 void CONTROLLO()
