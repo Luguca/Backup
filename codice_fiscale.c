@@ -16,6 +16,8 @@ int main()
     COGNOME();
     NOME();
     DATA();
+    LUOGO();
+    CONTROLLO();
 }
 
 void COGNOME()
@@ -462,13 +464,20 @@ void LUOGO()
     char cont[100];
     char stato[100];
     char cod_stato[4];
-    printf("inserire dove sei nato");
+    printf("inserire dove sei nato: ");
     scanf("%s", stato);
     int x = strlen(stato);
     while(fscanf(fcheck, "%s %s", cont, cod_stato))
-    {
+    {     
+        printf("test\n");
+        for (int i = 0; i < x; i++)
+        {
+            printf("test\n");
+            tolower(cont[i]);
+        }
         if(strcmp(cont, stato)==0)
         {
+            printf("test\n");
             for (int i = 0; i < 4; i++)
             {
                 codice[c]=cod_stato[i];
@@ -476,9 +485,381 @@ void LUOGO()
             }
         }
     }
+    printf("%s\n", codice);
+    return;
 }
 
 void CONTROLLO()
 {
+    int totale = 0;
+    for (int i = 0; i < 15; i++)
+    {
+        switch (codice[i])
+        {
+        case '0':
+            if (i%2==0)
+            {
+                totale = totale + 0;
+            }
+            else
+            {
+                totale = totale + 1;
+            }
+            break;
+        case '1':
+            if (i%2==0)
+            {
+                totale = totale + 1;
+            }
+            else
+            {
+                totale = totale + 0;
+            }
+            break;
+        case '2':
+            if (i%2==0)
+            {
+                totale = totale + 2;
+            }
+            else
+            {
+                totale = totale + 5;
+            }
+            break;
+        case '3':
+            if (i%2==0)
+            {
+                totale = totale + 3;
+            }
+            else
+            {
+                totale = totale + 7;
+            }
+            break;
+        case '4':
+            if (i%2==0)
+            {
+                totale = totale + 4;
+            }
+            else
+            {
+                totale = totale + 9;
+            }
+            break;
+        case '5':
+            if (i%2==0)
+            {
+                totale = totale + 5;
+            }
+            else
+            {
+                totale = totale + 13;
+            }
+            break;
+        case '6':
+            if (i%2==0)
+            {
+                totale = totale + 6;
+            }
+            else
+            {
+                totale = totale + 15;
+            }
+            break;
+        case '7':
+            if (i%2==0)
+            {
+                totale = totale + 7;
+            }
+            else
+            {
+                totale = totale + 17;
+            }
+            break;
+        case '8':
+            if (i%2==0)
+            {
+                totale = totale + 8;
+            }
+            else
+            {
+                totale = totale + 19;
+            }
+            break;
+        case '9':
+            if (i%2==0)
+            {
+                totale = totale + 9;
+            }
+            else
+            {
+                totale = totale + 21;
+            }
+            break;
+        case 'a':
+            if (i%2==0)
+            {
+                totale = totale + 0;
+            }
+            else
+            {
+                totale = totale + 1;
+            }
+            break;
+        case 'b':
+            if (i%2==0)
+            {
+                totale = totale + 1;
+            }
+            else
+            {
+                totale = totale + 0;
+            }
+            break;
+        case 'c':
+            if (i%2==0)
+            {
+                totale = totale + 2;
+            }
+            else
+            {
+                totale = totale + 5;
+            }
+            break;
+        case 'd':
+            if (i%2==0)
+            {
+                totale = totale + 3;
+            }
+            else
+            {
+                totale = totale + 7;
+            }
+            break;
+        case 'e':
+            if (i%2==0)
+            {
+                totale = totale + 4;
+            }
+            else
+            {
+                totale = totale + 9;
+            }
+            break;
+        case 'f':
+            if (i%2==0)
+            {
+                totale = totale + 5;
+            }
+            else
+            {
+                totale = totale + 13;
+            }
+            break;
+        case 'g':
+            if (i%2==0)
+            {
+                totale = totale + 6;
+            }
+            else
+            {
+                totale = totale + 15;
+            }
+            break;
+        case 'h':
+            if (i%2==0)
+            {
+                totale = totale + 7;
+            }
+            else
+            {
+                totale = totale + 17;
+            }
+            break;
+        case 'i':
+            if (i%2==0)
+            {
+                totale = totale + 8;
+            }
+            else
+            {
+                totale = totale + 19;
+            }
+            break;
+        case 'j':
+            if (i%2==0)
+            {
+                totale = totale + 9;
+            }
+            else
+            {
+                totale = totale + 21;
+            }
+            break;
+        case 'k':
+            if (i%2==0)
+            {
+                totale = totale + 10;
+            }
+            else
+            {
+                totale = totale + 2;
+            }
+            break;
+        case 'l':
+            if (i%2==0)
+            {
+                totale = totale + 11;
+            }
+            else
+            {
+                totale = totale + 4;
+            }
+            break;
+        case 'm':
+            if (i%2==0)
+            {
+                totale = totale + 12;
+            }
+            else
+            {
+                totale = totale + 18;
+            }
+            break;
+        case 'n':
+            if (i%2==0)
+            {
+                totale = totale + 13;
+            }
+            else
+            {
+                totale = totale + 20;
+            }
+            break;
+        case 'o':
+            if (i%2==0)
+            {
+                totale = totale + 14;
+            }
+            else
+            {
+                totale = totale + 11;
+            }
+            break;
+        case 'p':
+            if (i%2==0)
+            {
+                totale = totale + 15;
+            }
+            else
+            {
+                totale = totale + 3;
+            }
+            break;
+        case 'q':
+            if (i%2==0)
+            {
+                totale = totale + 16;
+            }
+            else
+            {
+                totale = totale + 6;
+            }
+            break;
+        case 'r':
+            if (i%2==0)
+            {
+                totale = totale + 17;
+            }
+            else
+            {
+                totale = totale + 8;
+            }
+            break;
+        case 's':
+            if (i%2==0)
+            {
+                totale = totale + 18;
+            }
+            else
+            {
+                totale = totale + 12;
+            }
+            break;
+        case 't':
+            if (i%2==0)
+            {
+                totale = totale + 19;
+            }
+            else
+            {
+                totale = totale + 14;
+            }
+            break;
+        case 'u':
+            if (i%2==0)
+            {
+                totale = totale + 20;
+            }
+            else
+            {
+                totale = totale + 16;
+            }
+            break;
+        case 'v':
+            if (i%2==0)
+            {
+                totale = totale + 21;
+            }
+            else
+            {
+                totale = totale + 10;
+            }
+            break;
+        case 'w':
+            if (i%2==0)
+            {
+                totale = totale + 22;
+            }
+            else
+            {
+                totale = totale + 22;
+            }
+            break;
+        case 'x':
+            if (i%2==0)
+            {
+                totale = totale + 23;
+            }
+            else
+            {
+                totale = totale + 25;
+            }
+            break;
+        case 'y':
+            if (i%2==0)
+            {
+                totale = totale + 24;
+            }
+            else
+            {
+                totale = totale + 24;
+            }
+            break;
+        case 'z':
+            if (i%2==0)
+            {
+                totale = totale + 25;
+            }
+            else
+            {
+                totale = totale + 23;
+            }
+            break;     
 
+        default:
+            break;
+        }
+    }
+    return;
 }
