@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#define CODICI ".\\codice_catastale_italia.txt"
+//#define CODICI ".\\codici.txt"
+#define CODICI "codici.txt"
 char codice[16];
 int c = 0;
 void NOME();
@@ -460,29 +461,40 @@ void DATA()
 void LUOGO()
 {
     FILE *fcheck;
-    int x;
-    fcheck=fopen(CODICI, "r");
+    int x, f;
     char cont[100];
     char stato[100];
     char cod_stato[4];
+    char cata[50];
     printf("inserire dove sei nato: ");
-    scanf("%s", stato);
-    printf("passato\n");
-    x = strlen(stato);
-    printf("passato\n");
-    while(fscanf(fcheck, "%s %s", cont, cod_stato) != EOF)
+        scanf("%s", stato);
+    fcheck=fopen(CODICI, "r");
+    if (fcheck==NULL)
     {
-        printf("if\n");
-        if(strcmp(cont, stato)==0)
+        fprintf(stderr, "error");
+    }
+    else
+    {
+        while(fscanf(fcheck, "%s %s", cont, cod_stato) != EOF)
         {
-            printf("inserimento nel cod_stato\n");
-            for (int i = 0; i < 4; i++)
+            if(strcmp(cont, stato) == 0)
             {
-                codice[c]=cod_stato[i];
-                c = c + 1;
+                for(int i=0 ; i < 4; i++)
+                {
+                    cata[i]=cod_stato[i];
+                }
             }
         }
     }
+    fclose(fcheck);
+    codice[c]=cata[0];
+    c = c + 1;
+    codice[c]=cata[1];
+    c = c + 1;
+    codice[c]=cata[2];
+    c = c + 1;
+    codice[c]=cata[3];
+    c = c + 1;
     printf("%s\n", codice);
     return;
 }
