@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
-#define LUOGHI ".\\codice_catastale_italia.txt"
+#define CODICI ".\\codice_catastale_italia.txt"
 char codice[16];
 int c = 0;
 void NOME();
@@ -16,6 +16,8 @@ int main()
     COGNOME();
     NOME();
     DATA();
+    LUOGO();
+    CONTROLLO();
 }
 
 void COGNOME()
@@ -458,21 +460,22 @@ void DATA()
 void LUOGO()
 {
     FILE *fcheck;
-    fcheck=fopen(LUOGHI, "r");
+    int x;
+    fcheck=fopen(CODICI, "r");
     char cont[100];
     char stato[100];
     char cod_stato[4];
-    printf("inserire dove sei nato");
+    printf("inserire dove sei nato: ");
     scanf("%s", stato);
-    int x = strlen(stato);
-    for (int i = 0; i < 100; i++)
-    {
-        tolower(cont[i]);
-    }
+    printf("passato\n");
+    x = strlen(stato);
+    printf("passato\n");
     while(fscanf(fcheck, "%s %s", cont, cod_stato) != EOF)
-    {        
+    {
+        printf("if\n");
         if(strcmp(cont, stato)==0)
         {
+            printf("inserimento nel cod_stato\n");
             for (int i = 0; i < 4; i++)
             {
                 codice[c]=cod_stato[i];
@@ -480,6 +483,8 @@ void LUOGO()
             }
         }
     }
+    printf("%s\n", codice);
+    return;
 }
 
 void CONTROLLO()
@@ -854,4 +859,5 @@ void CONTROLLO()
             break;
         }
     }
+    return;
 }
