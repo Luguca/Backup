@@ -16,8 +16,6 @@ int main()
     COGNOME();
     NOME();
     DATA();
-    LUOGO();
-    CONTROLLO();
 }
 
 void COGNOME()
@@ -464,20 +462,17 @@ void LUOGO()
     char cont[100];
     char stato[100];
     char cod_stato[4];
-    printf("inserire dove sei nato: ");
+    printf("inserire dove sei nato");
     scanf("%s", stato);
     int x = strlen(stato);
-    while(fscanf(fcheck, "%s %s", cont, cod_stato))
-    {     
-        printf("test\n");
-        for (int i = 0; i < x; i++)
-        {
-            printf("test\n");
-            tolower(cont[i]);
-        }
+    for (int i = 0; i < 100; i++)
+    {
+        tolower(cont[i]);
+    }
+    while(fscanf(fcheck, "%s %s", cont, cod_stato) != EOF)
+    {        
         if(strcmp(cont, stato)==0)
         {
-            printf("test\n");
             for (int i = 0; i < 4; i++)
             {
                 codice[c]=cod_stato[i];
@@ -485,8 +480,6 @@ void LUOGO()
             }
         }
     }
-    printf("%s\n", codice);
-    return;
 }
 
 void CONTROLLO()
@@ -861,5 +854,4 @@ void CONTROLLO()
             break;
         }
     }
-    return;
 }
