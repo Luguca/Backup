@@ -9,16 +9,35 @@ void NOME();
 void COGNOME();
 void DATA();
 void LUOGO();
-void PROVINCIA();
 void CONTROLLO();
+void INVERSO();
 
 int main()
 {
-    COGNOME();
-    NOME();
-    DATA();
-    LUOGO();
-    CONTROLLO();
+    int menu;
+    printf("inserire 1 per fare il codice, inserire 2 per l'inverso: ");
+    scanf("%d", &menu);
+    do
+    {
+        switch (menu)
+        {
+        case 1:
+            COGNOME();
+            NOME();
+            DATA();
+            LUOGO();
+            CONTROLLO();
+            break;
+        case 2:
+            INVERSO();
+            break;
+        
+        default:
+            break;
+        }
+    } while ((menu!=1)||(menu!=2));
+    
+    
 }
 
 void COGNOME()
@@ -477,6 +496,7 @@ void LUOGO()
     {
         while(fscanf(fcheck, "%s %s", cont, cod_stato) != EOF)
         {
+            cod_stato[0]=tolower(cod_stato[0]);
             if(strcmp(cont, stato) == 0)
             {
                 for(int i=0 ; i < 4; i++)
@@ -501,13 +521,13 @@ void LUOGO()
 
 void CONTROLLO()
 {
-    int totale = 0;
+    int totale = 0, pretot = 0;
     for (int i = 0; i < 15; i++)
     {
         switch (codice[i])
         {
         case '0':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 0;
             }
@@ -517,7 +537,7 @@ void CONTROLLO()
             }
             break;
         case '1':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 1;
             }
@@ -527,7 +547,7 @@ void CONTROLLO()
             }
             break;
         case '2':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 2;
             }
@@ -537,7 +557,7 @@ void CONTROLLO()
             }
             break;
         case '3':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 3;
             }
@@ -547,7 +567,7 @@ void CONTROLLO()
             }
             break;
         case '4':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 4;
             }
@@ -557,7 +577,7 @@ void CONTROLLO()
             }
             break;
         case '5':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 5;
             }
@@ -567,7 +587,7 @@ void CONTROLLO()
             }
             break;
         case '6':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 6;
             }
@@ -577,7 +597,7 @@ void CONTROLLO()
             }
             break;
         case '7':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 7;
             }
@@ -587,7 +607,7 @@ void CONTROLLO()
             }
             break;
         case '8':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 8;
             }
@@ -597,7 +617,7 @@ void CONTROLLO()
             }
             break;
         case '9':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 9;
             }
@@ -607,7 +627,7 @@ void CONTROLLO()
             }
             break;
         case 'a':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 0;
             }
@@ -617,7 +637,7 @@ void CONTROLLO()
             }
             break;
         case 'b':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 1;
             }
@@ -627,7 +647,7 @@ void CONTROLLO()
             }
             break;
         case 'c':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 2;
             }
@@ -637,7 +657,7 @@ void CONTROLLO()
             }
             break;
         case 'd':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 3;
             }
@@ -647,7 +667,7 @@ void CONTROLLO()
             }
             break;
         case 'e':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 4;
             }
@@ -657,7 +677,7 @@ void CONTROLLO()
             }
             break;
         case 'f':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 5;
             }
@@ -667,7 +687,7 @@ void CONTROLLO()
             }
             break;
         case 'g':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 6;
             }
@@ -677,7 +697,7 @@ void CONTROLLO()
             }
             break;
         case 'h':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 7;
             }
@@ -687,7 +707,7 @@ void CONTROLLO()
             }
             break;
         case 'i':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 8;
             }
@@ -697,7 +717,7 @@ void CONTROLLO()
             }
             break;
         case 'j':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 9;
             }
@@ -707,7 +727,7 @@ void CONTROLLO()
             }
             break;
         case 'k':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 10;
             }
@@ -717,7 +737,7 @@ void CONTROLLO()
             }
             break;
         case 'l':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 11;
             }
@@ -727,7 +747,7 @@ void CONTROLLO()
             }
             break;
         case 'm':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 12;
             }
@@ -737,7 +757,7 @@ void CONTROLLO()
             }
             break;
         case 'n':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 13;
             }
@@ -747,7 +767,7 @@ void CONTROLLO()
             }
             break;
         case 'o':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 14;
             }
@@ -757,7 +777,7 @@ void CONTROLLO()
             }
             break;
         case 'p':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 15;
             }
@@ -767,7 +787,7 @@ void CONTROLLO()
             }
             break;
         case 'q':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 16;
             }
@@ -777,7 +797,7 @@ void CONTROLLO()
             }
             break;
         case 'r':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 17;
             }
@@ -787,7 +807,7 @@ void CONTROLLO()
             }
             break;
         case 's':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 18;
             }
@@ -797,7 +817,7 @@ void CONTROLLO()
             }
             break;
         case 't':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 19;
             }
@@ -807,7 +827,7 @@ void CONTROLLO()
             }
             break;
         case 'u':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 20;
             }
@@ -817,7 +837,7 @@ void CONTROLLO()
             }
             break;
         case 'v':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 21;
             }
@@ -827,7 +847,7 @@ void CONTROLLO()
             }
             break;
         case 'w':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 22;
             }
@@ -837,7 +857,7 @@ void CONTROLLO()
             }
             break;
         case 'x':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 23;
             }
@@ -847,7 +867,7 @@ void CONTROLLO()
             }
             break;
         case 'y':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 24;
             }
@@ -857,7 +877,7 @@ void CONTROLLO()
             }
             break;
         case 'z':
-            if (i%2==0)
+            if (i+1%2==0)
             {
                 totale = totale + 25;
             }
@@ -866,10 +886,172 @@ void CONTROLLO()
                 totale = totale + 23;
             }
             break;     
-
         default:
             break;
         }
+    }
+    int resto;
+    resto = totale%26;
+    switch (resto)
+    {
+    case 0:
+        codice[c]='a';
+        break;
+    case 1:
+        codice[c]='b';
+        break;
+    case 2:
+        codice[c]='c';
+        break;
+    case 3:
+        codice[c]='d';
+        break;
+    case 4:
+        codice[c]='e';
+        break;
+    case 5:
+        codice[c]='f';
+        break;
+    case 6:
+        codice[c]='g';
+        break;
+    case 7:
+        codice[c]='h';
+        break;
+    case 8:
+        codice[c]='i';
+        break;
+    case 9:
+        codice[c]='j';
+        break;
+    case 10:
+        codice[c]='k';
+        break;
+    case 11:
+        codice[c]='l';
+        break;
+    case 12:
+        codice[c]='m';
+        break;
+    case 13:
+        codice[c]='n';
+        break;
+    case 14:
+        codice[c]='o';
+        break;
+    case 15:
+        codice[c]='p';
+        break;
+    case 16:
+        codice[c]='q';
+        break;
+    case 17:
+        codice[c]='r';
+        break;
+    case 18:
+        codice[c]='s';
+        break;
+    case 19:
+        codice[c]='t';
+        break;
+    case 20:
+        codice[c]='u';
+        break;
+    case 21:
+        codice[c]='v';
+        break;
+    case 22:
+        codice[c]='w';
+        break;
+    case 23:
+        codice[c]='x';
+        break;
+    case 24:
+        codice[c]='y';
+        break;
+    case 25:
+        codice[c]='z';
+        break;
+    default:
+        break;
+    }
+    printf("%s\n", codice);
+    return;
+}
+
+void INVERSO()
+{
+    printf("inserire il tuo codice fiscale: ");
+    scanf("%s", codice);
+    printf("nome:");
+    for(int i = 0; i < 3; i++)
+    {
+        printf("%c", codice[i]);
+    }
+    printf("\n");
+    printf("cognome:");
+    for(int i = 3; i < 6; i++)
+    {
+        printf("%c", codice[i]);
+    }
+    printf("\n");
+    if((codice[7]>=2)&&(codice[8]>4))
+    {
+        printf("19");
+        printf("%d", codice[7]);
+        printf("%d", codice[8]);
+    }
+    else
+    {
+        if((codice[7]<=2)&&(codice[8]<=4))
+        {
+            printf("20");
+            printf("%d", codice[7]);
+            printf("%d", codice[8]);
+        }
+    }
+    printf("\n");
+    switch (codice[9])
+    {
+    case 'a':
+        printf("mese:gennaio");
+        break;
+    case 'b':
+        printf("mese:febbraio");
+        break;
+    case 'c':
+        printf("mese:marzo");
+        break;
+    case 'd':
+        printf("mese:aprile");
+        break;
+    case 'e':
+        printf("mese:maggio");
+        break;
+    case 'h':
+        printf("mese:giugno");
+        break;
+    case 'l':
+        printf("mese:luglio");
+        break;
+    case 'm':
+        printf("mese:agosto");
+        break;
+    case 'p':
+        printf("mese:settembre");
+        break;
+    case 'r':
+        printf("mese:ottobre");
+        break;
+    case 's':
+        printf("mese:novembre");
+        break;
+    case 't':
+        printf("mese:dicembre");
+        break;
+    default:
+    printf("numero sbagliato\n");
+        break;
     }
     return;
 }
