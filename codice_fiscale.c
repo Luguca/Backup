@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 //#define CODICI ".\\codici.txt"
 #define CODICI "codici.txt"
 char codice[16];
@@ -35,7 +36,7 @@ int main()
         default:
             break;
         }
-    } while ((menu!=1)||(menu!=2));
+    } while ((menu<1)||(menu>2));
     
     
 }
@@ -981,37 +982,49 @@ void CONTROLLO()
 
 void INVERSO()
 {
+    FILE *fcheck;
+    int x, f;
+    char cont[100];
+    char stato[100];
+    char cod_stato[4];
+    char cata[4];
     printf("inserire il tuo codice fiscale: ");
     scanf("%s", codice);
-    printf("nome:");
+    printf("cognome:");
     for(int i = 0; i < 3; i++)
     {
         printf("%c", codice[i]);
     }
     printf("\n");
-    printf("cognome:");
+    printf("nome:");
     for(int i = 3; i < 6; i++)
     {
         printf("%c", codice[i]);
     }
     printf("\n");
-    if((codice[7]>=2)&&(codice[8]>4))
+    if((codice[6]>50)&&(codice[7]>52))
     {
         printf("19");
-        printf("%d", codice[7]);
-        printf("%d", codice[8]);
+        printf("%c", codice[6]);
+        printf("%c", codice[7]);
     }
     else
     {
-        if((codice[7]<=2)&&(codice[8]<=4))
+        if((codice[6]<=50)||(codice[7])<=52)
         {
             printf("20");
-            printf("%d", codice[7]);
-            printf("%d", codice[8]);
+            printf("%c", codice[6]);
+            printf("%c", codice[7]);
+        }
+        else
+        {
+            printf("19");
+            printf("%c", codice[6]);
+            printf("%c", codice[7]);
         }
     }
     printf("\n");
-    switch (codice[9])
+    switch (codice[8])
     {
     case 'a':
         printf("mese:gennaio");
@@ -1050,8 +1063,37 @@ void INVERSO()
         printf("mese:dicembre");
         break;
     default:
-    printf("numero sbagliato\n");
+    printf("sbagliato\n");
         break;
+    }
+    printf("\n");
+    if(codice[9]>51)
+    {
+        printf("genere:femmina\n");
+    }
+    else
+    {
+        printf("genere:maschio\n");
+    }
+    cod_stato[0]=codice[11];
+    cod_stato[1]=codice[12];
+    cod_stato[2]=codice[13];
+    cod_stato[3]=codice[14];
+    fcheck=fopen(CODICI, "r");
+    if (fcheck==NULL)
+    {
+        fprintf(stderr, "error");
+    }
+    else
+    {
+        while(fscanf(fcheck, "%s %s", cont, cata) != EOF)
+        {
+            cata[0]=tolower(cata[0]);
+            if(strcmp(cod_stato, cata) == 0)
+            {
+                printf("nato a %s", cont);
+            }
+        }
     }
     return;
 }
