@@ -1,0 +1,30 @@
+.title{
+    font-size: 32px;
+    border: 10px solid black;
+    width: 650px;
+}
+
+.main{
+    width: 650px;
+    border: 10px solid green;
+}
+
+.slides{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.spie{
+    font-size: 20px;
+}
+
+.test{
+    font-size: 30px;
+    color: red;
+    font-weight: bold;
+}
+
+.delete{
+    width: 650px;
+    border: 10px solid red;
+}
